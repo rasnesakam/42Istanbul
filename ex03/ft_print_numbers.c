@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emakas <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/26 12:50:21 by emakas            #+#    #+#             */
-/*   Updated: 2021/11/28 13:04:43 by emakas           ###   ########.fr       */
+/*   Created: 2021/11/29 12:26:47 by emakas            #+#    #+#             */
+/*   Updated: 2021/11/29 12:32:48 by emakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_print_alphabet(void)
+void	ft_print_numbers(void)
 {
-	char	alphabet;
+	char	num;
 
-	alphabet = 'a';
-	while (alphabet <= 'z')
+	num = '0';
+	while (num <= '9')
 	{
-		ft_putchar(alphabet);
-		alphabet++;
+		ft_putchar(num);
+		num++;
 	}
 }

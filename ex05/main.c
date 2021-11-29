@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emakas <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/26 12:50:21 by emakas            #+#    #+#             */
-/*   Updated: 2021/11/28 13:04:43 by emakas           ###   ########.fr       */
+/*   Created: 2021/11/29 13:01:00 by emakas            #+#    #+#             */
+/*   Updated: 2021/11/29 13:01:06 by emakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_print_comb(void);
 
-void	ft_print_alphabet(void)
+int	main(void)
 {
-	char	alphabet;
-
-	alphabet = 'a';
-	while (alphabet <= 'z')
-	{
-		ft_putchar(alphabet);
-		alphabet++;
-	}
+	ft_print_comb();
+	return (0);
 }

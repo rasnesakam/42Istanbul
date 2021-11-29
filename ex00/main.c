@@ -6,17 +6,14 @@
 /*   By: emakas <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 14:58:42 by emakas            #+#    #+#             */
-/*   Updated: 2021/11/27 15:05:35 by emakas           ###   ########.fr       */
+/*   Updated: 2021/11/28 12:53:24 by emakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putchar(char c);
+void	ft_putchar(char c);
 
-int main()
+int	main(void)
 {
-
 	ft_putchar('c');
-
-	return 0;
-
+	return (0);
 }
