@@ -6,7 +6,7 @@
 /*   By: emakas <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 15:03:46 by emakas            #+#    #+#             */
-/*   Updated: 2021/11/29 15:04:53 by emakas           ###   ########.fr       */
+/*   Updated: 2021/12/01 16:28:31 by emakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,37 @@
 
 void	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	write (1, &c, 1);
 }
 
 void	ft_putn(int num)
 {
 	if (num >= 0 && num <= 9)
 	{
-		ft_putchar(48 + num);
+		ft_putchar (48 + num);
 	}
 }
 
-void	ft_putnbr(int nbr)
+void	ft_putnbr(int nb)
 {
-	int	n;
-
-	n = nbr;
-	if (nbr < 0)
+	if (nb == -2147483648)
 	{
 		ft_putchar('-');
-		n = -n;
+		ft_putchar('2');
+		nb = 147483648;
 	}
-	if (n >= 10)
-	{	
-		ft_putnbr(n / 10);
-		ft_putn(n % 10);
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb *= -1;
+	}
+	if (nb < 10)
+	{
+		ft_putchar(nb + 48);
+		return ;
 	}
 	else
-		ft_putn(n);
+		ft_putnbr(nb / 10);
+	ft_putnbr(nb % 10);
 }
+
