@@ -1,18 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emakas <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/08 17:35:34 by emakas            #+#    #+#             */
+/*   Updated: 2021/12/08 17:48:44 by emakas           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	isalphanumeric(char c)
 {
-	if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	if (c >= '0' && c <= '9')
+		return (1);
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	if (c >= 'A' && c <= 'Z')
 		return (1);
 	else
 		return (0);
 }
+
 char	*ft_strcapitalize(char *str)
 {
 	int	i;
 
 	i = 0;
-	while(str[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if (i == 0 || isalphanumeric(str[i-1]) == 0)
+		if (i == 0 || isalphanumeric (str[i - 1]) == 0)
 		{
 			if (str[i] >= 'a' && str[i] <= 'z')
 			{

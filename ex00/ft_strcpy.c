@@ -6,14 +6,14 @@
 /*   By: emakas <emakas@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 20:13:48 by emakas            #+#    #+#             */
-/*   Updated: 2021/12/05 20:14:58 by emakas           ###   ########.fr       */
+/*   Updated: 2021/12/08 17:36:46 by emakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
-	
+
 	i = 0;
 	while (src[i] != '\0')
 	{
