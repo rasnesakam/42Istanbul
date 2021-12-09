@@ -6,7 +6,7 @@
 /*   By: emakas <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 17:33:34 by emakas            #+#    #+#             */
-/*   Updated: 2021/12/08 17:41:37 by emakas           ###   ########.fr       */
+/*   Updated: 2021/12/09 11:58:11 by emakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_str_is_alpha(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] < 'A' || str[i] > 'Z' && str[i] < 'a' || str[i] > 'z')
+		if ((str[i] < 'A' || str[i] > 'Z') && (str[i] < 'a' || str[i] > 'z'))
 		{
 			return (0);
 		}
