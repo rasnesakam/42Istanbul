@@ -6,20 +6,20 @@
 /*   By: emakas <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 16:27:43 by emakas            #+#    #+#             */
-/*   Updated: 2021/12/11 16:28:06 by emakas           ###   ########.fr       */
+/*   Updated: 2021/12/12 14:49:44 by emakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while ((i < n) && (s1[i] != '\0' || s2[i] != '\0'))
 	{
 		if (s1[i] < s2[i])
 			return (-1);
-		if (s1[i] < s2[i])
+		if (s1[i] > s2[i])
 			return (1);
 		i++;
 	}

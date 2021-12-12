@@ -1,14 +1,22 @@
-int	contains(char *str1, char *str2,int pos)
-{
-	int i;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emakas <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/12 13:00:59 by emakas            #+#    #+#             */
+/*   Updated: 2021/12/12 14:38:28 by emakas           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	i = pos;
-	while (str1[i] != '\0' || str2[i] != '\0')
+int	contains(char *str1, char *str2)
+{	
+	while (*str1 != '\0' && *str2 != '\0')
 	{
-		if (str1[i] != str2[i])
+		if (*(str1++) != *(str2++))
 			return (0);
-		i++;
-	}
+	}	
 	return (1);
 }
 
@@ -16,8 +24,12 @@ char	*ft_strstr(char *str, char *to_find)
 {
 	while (*str != '\0')
 	{
-		if (str == to_find && equals(str,to_find))
-			
-		src++;
+		if (*str == *to_find)
+		{
+			if (contains (str, to_find) == 1)
+				return (str);
+		}	
+		str++;
 	}
+	return (str);
 }

@@ -1,28 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emakas <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 17:13:33 by emakas            #+#    #+#             */
-/*   Updated: 2021/12/12 14:42:12 by emakas           ###   ########.fr       */
+/*   Created: 2021/12/12 17:16:56 by emakas            #+#    #+#             */
+/*   Updated: 2021/12/12 18:02:24 by emakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
+unsigned int	ft_strlen(char *str)
 {
-	int	i;
+	unsigned int	counter;
+
+	counter = 0;
+	while (str[counter] != '\0' )
+		counter++;
+	return (counter);
+}
+
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+{
+	unsigned int	i;
 
 	i = 0;
-	while (dest[i] != '\0')
+	if (size <= ft_strlen(dest))
+		return (size + ft_strlen(src));
+	while (*dest != '\0')
+	{
+		dest++;
 		i++;
+	}
+	while (*src != '\0' && i < size - 1)
+	{
+		*(dest++) = *(src++);
+		i++;
+	}
+	*dest = '\0';
 	while (*src != '\0')
 	{
-		dest[i] = *src;
 		src++;
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (i);
 }
