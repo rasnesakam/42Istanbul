@@ -6,7 +6,7 @@
 /*   By: emakas <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 18:26:19 by emakas            #+#    #+#             */
-/*   Updated: 2021/12/11 18:29:49 by emakas           ###   ########.fr       */
+/*   Updated: 2021/12/13 17:49:56 by emakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 		dest[srci + i] = src[srci];
 		srci++;
 	}
+	dest[srci + i] = '\0';
 	return (dest);
 }
