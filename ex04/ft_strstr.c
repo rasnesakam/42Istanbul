@@ -6,7 +6,7 @@
 /*   By: emakas <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 13:00:59 by emakas            #+#    #+#             */
-/*   Updated: 2021/12/13 17:53:55 by emakas           ###   ########.fr       */
+/*   Updated: 2021/12/14 23:19:01 by emakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	contains(char *str1, char *str2)
 
 char	*ft_strstr(char *str, char *to_find)
 {
+	if (*to_find == '\0')
+		return (str);
 	while (*str != '\0')
 	{
 		if (*str == *to_find)
