@@ -3,6 +3,6 @@
 
 This repository does not contains all of the projects
 
-Every project includes in different branches
+Every projects are in different branches
 
 branch names same as the project name
