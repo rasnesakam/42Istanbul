@@ -6,20 +6,22 @@
 /*   By: emakas <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 20:08:43 by emakas            #+#    #+#             */
-/*   Updated: 2021/12/15 20:20:08 by emakas           ###   ########.fr       */
+/*   Updated: 2021/12/16 14:39:33 by emakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_sqrt(int nb)
 {
-	int	n;
+	long	n;
+	long	lnb;
 
+	lnb = nb;
 	n = 0;
 	if (nb < 0)
 		return (0);
-	while (n * n <= nb)
+	while (n * n <= lnb)
 	{
-		if (n * n == nb)
+		if (n * n == lnb)
 			return (n);
 		n++;
 	}
