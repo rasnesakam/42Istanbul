@@ -6,75 +6,68 @@
 /*   By: emakas <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 17:26:00 by emakas            #+#    #+#             */
-/*   Updated: 2021/12/16 18:24:23 by emakas           ###   ########.fr       */
+/*   Updated: 2021/12/16 19:52:36 by emakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#include <unistd.h>
+
+void	ft_putstr(char *str)
+{
+	char	*charptr;
+
+	charptr = str;
+	while (*charptr != 0)
+	{
+		write(1, charptr, 1);
+		charptr++;
+	}
+	write(1, "\n", 1);
+	return ;
+}
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
+	int	n;
 
-	i = 0;
-	while ((s1[i] != '\0') || (s2[i] != '\0'))
+	n = 0;
+	while (s1[n] && s1[n] == s2[n])
+		n++;
+	return (s1[n] - s2[n]);
+}
+
+void	ft_sort_tab(char *tab[], int size)
+{
+	int		i;
+	int		j;
+	char	*temp;
+
+	i = 1;
+	while (i < size)
 	{
-		if (s1[i] < s2[i])
-			return (-1);
-		if (s1[i] > s2[i])
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-void	putstr(char *str)
-{
-	while (*str != '\0')
-		write (1, str++, 1);
-}
-
-void	ft_swap(char **c1, char **c2)
-{
-	char	*tmp;
-
-	tmp = *c1;
-	*c1 = *c2;
-	*c2 = tmp;
-}
-
-void	ft_sort(char **strs, int len)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < len - 1)
-	{
-		j = 0;
-		while (j < len - i)
+		j = i + 1;
+		while (j < size)
 		{
-			if (ft_strcmp (strs[j], strs[j + 1]) > 0)
-				ft_swap (&strs[j], &strs[j + 1]);
+			if (ft_strcmp(tab[j], tab[i]) < 0)
+			{
+				temp = tab[i];
+				tab[i] = tab[j];
+				tab[j] = temp;
+			}
 			j++;
 		}
 		i++;
 	}
+	return ;
 }
 
-int	main(int ac, char **av)
+int	main(int argc, char *argv[])
 {
-	int	i;
+	int	n;
 
-	if (ac >= 2)
-	{
-		ft_sort (av, ac - 1);
-		i = 1;
-		while (i < ac)
-		{
-			putstr (av[i++]);
-			putstr ("\n");
-		}
-	}
+	n = 1;
+	ft_sort_tab(argv, argc);
+	while (n <= argc - 1)
+		ft_putstr(argv[n++]);
 	return (0);
 }

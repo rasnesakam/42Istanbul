@@ -6,24 +6,28 @@
 /*   By: emakas <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 17:22:17 by emakas            #+#    #+#             */
-/*   Updated: 2021/12/16 18:26:07 by emakas           ###   ########.fr       */
+/*   Updated: 2021/12/16 19:51:43 by emakas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#include <unistd.h>
 
-void	putstr(char *str)
+void	ft_putstr(char *str)
 {
-	while (*str != '\0')
-		write (1, str++, 1);
+	int	n;
+
+	n = 0;
+	while (str[n])
+		write(1, &str[n++], 1);
+	return ;
 }
 
-int	main(int ac, char **av)
+int	main(int argc, char *argv[])
 {
-	while (ac-- >= 1)
-	{
-		putstr (av[ac]);
-		putstr ("\n");
+	while (argc > 1)
+	{	
+		ft_putstr(argv[--argc]);
+		ft_putstr("\n");
 	}
 	return (0);
 }
